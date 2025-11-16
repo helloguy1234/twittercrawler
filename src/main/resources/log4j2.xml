@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <!-- 1. Cấu hình để in ra Console (giống System.out) -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <!-- Định dạng log: Thời gian, Mức độ, Tên Class, Tin nhắn -->
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+
+        <!-- 2. Cấu hình để ghi vào file -->
+        <File name="File" fileName="logs/app.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+    </Appenders>
+    
+    <Loggers>
+        <!-- Cấu hình logger gốc (root) -->
+        <Root level="debug">
+            <!-- 
+                In ra cả 2 nơi: Console và File
+                Mức "debug" có nghĩa là: In ra tất cả DEBUG, INFO, WARN, ERROR
+                Nếu bạn đổi thành "info", nó sẽ chỉ in INFO, WARN, ERROR (ẩn DEBUG)
+            -->
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
+        </Root>
+    </Loggers>
+</Configuration>

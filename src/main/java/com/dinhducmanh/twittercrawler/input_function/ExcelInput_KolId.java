@@ -9,7 +9,7 @@ import com.dinhducmanh.twittercrawler.input_function.Interface.Input_KolId;
 public class ExcelInput_KolId implements Input_KolId {
 
     private final SupportExcel excel = new SupportExcel();
-    private final String excelFilePath = "Big-Assignment\\src\\main\\java\\ohhello\\Resource\\Input_Initiate_Information.xlsx";
+    private final String excelFilePath = "src\\main\\java\\com\\dinhducmanh\\resource\\Input_Initiate_Information.xlsx";
 
     public ExcelInput_KolId() throws Exception {
         excel.setExcelFile(excelFilePath, "Kol_Id and Kol_numberOfFollower");

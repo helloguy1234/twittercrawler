@@ -1,3 +1,5 @@
+logs/
+selenium_profiles/
 target/
 pom.xml.tag
 pom.xml.releaseBackup

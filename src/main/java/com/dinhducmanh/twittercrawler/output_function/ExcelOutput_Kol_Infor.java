@@ -9,7 +9,7 @@ public class ExcelOutput_Kol_Infor implements OutPut_Kol_Infor {
 
     private int currentUserIndex = 0;
     private final SupportExcel excel = new SupportExcel();
-    private final String excelFilePath = "Big-Assignment\\src\\main\\java\\ohhello\\Resource\\Kol.xlsx";
+    private final String excelFilePath = "src\\main\\java\\com\\dinhducmanh\\resource\\Kol.xlsx";
 
     public ExcelOutput_Kol_Infor() throws Exception {
         excel.setExcelFile(excelFilePath, "Kol_Id and Kol_numberOfFollower");

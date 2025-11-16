@@ -6,7 +6,7 @@ import com.dinhducmanh.twittercrawler.input_function.Interface.Input_For_GetKolI
 public class ExcelInput_For_GerKolId implements Input_For_GetKolId {
 
     private final SupportExcel excel = new SupportExcel();
-    private final String excelFilePath = "Big-Assignment\\src\\main\\java\\ohhello\\Resource\\Input_Initiate_Information.xlsx";
+    private final String excelFilePath = "src\\main\\java\\com\\dinhducmanh\\resource\\Input_Initiate_Information.xlsx";
 
     public ExcelInput_For_GerKolId() throws Exception {
         excel.setExcelFile(excelFilePath, "Input_Initiate_Information");

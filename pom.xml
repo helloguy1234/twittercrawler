@@ -14,17 +14,17 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>21</maven.compiler.target>
   </properties>
 
   <dependencies>
     <!-- graph -->
     <dependency>
-  		<groupId>org.jgrapht</groupId>
-		<artifactId>jgrapht-core</artifactId>
-		<version>1.5.2</version>
-  	</dependency>
+    <groupId>org.jgrapht</groupId>
+      <artifactId>jgrapht-core</artifactId>
+      <version>1.5.2</version>
+    </dependency>
     
     <!-- Log4j API -->
     <dependency>
@@ -33,10 +33,17 @@
         <version>2.17.2</version> 
     </dependency>
 
-    <!-- Log4j Core -->
+    <!-- Log4j Core for logging--> 
     <dependency>
         <groupId>org.apache.logging.log4j</groupId>
         <artifactId>log4j-core</artifactId>
+        <version>2.17.2</version>
+    </dependency>
+
+    <!-- SLF4J to Log4j Bridge -->
+    <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-slf4j-impl</artifactId>
         <version>2.17.2</version>
     </dependency>
     
@@ -62,6 +69,11 @@
         <version>4.25.0</version>
     </dependency>
 
+    <dependency>
+      <groupId>io.github.bonigarcia</groupId>
+      <artifactId>webdrivermanager</artifactId>
+      <version>5.7.0</version>
+    </dependency>
     <!-- https://mvnrepository.com/artifact/org.apache.poi/poi --> 
     <dependency> 
         <groupId>org.apache.poi</groupId> 
@@ -99,6 +111,9 @@
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.8.0</version>
+          <configuration>
+            <release>21</release>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
@@ -131,7 +146,7 @@
           <artifactId>exec-maven-plugin</artifactId>
           <version>3.6.2</version>
           <configuration>
-            <mainClass>com.dinhducmanh.twittercrawler.scrap_info_from_twitter.scrap_kol_info.Get_Kol_Infor_FromTwitter</mainClass>
+            <mainClass>com.dinhducmanh.twittercrawler.Main_Class</mainClass>
           </configuration>
         </plugin>
       </plugins>

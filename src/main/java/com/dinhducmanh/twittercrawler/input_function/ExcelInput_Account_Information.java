@@ -6,7 +6,7 @@ import com.dinhducmanh.twittercrawler.input_function.Interface.Input_Account_Inf
 public class ExcelInput_Account_Information implements Input_Account_Information {
 
     private final SupportExcel excel = new SupportExcel();
-    private final String excelFilePath = "Big-Assignment\\src\\main\\java\\ohhello\\Resource\\Input_Initiate_Information.xlsx";
+    private final String excelFilePath = "src\\main\\java\\com\\dinhducmanh\\resource\\Input_Initiate_Information.xlsx";
 
     public ExcelInput_Account_Information() throws Exception {
         excel.setExcelFile(excelFilePath, "Input_Initiate_Information");
