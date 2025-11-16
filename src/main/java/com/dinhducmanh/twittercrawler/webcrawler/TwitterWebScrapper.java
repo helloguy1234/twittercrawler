@@ -156,7 +156,7 @@ public final class TwitterWebScrapper implements WebScrapper {
      */
     private boolean waitForManualLogin() {
         long endTime = System.currentTimeMillis() + (MAX_WAIT_MINUTES * 60 * 1000);
-        
+
         // In ra hướng dẫn
         System.out.println("----------------------------------------------------");
         System.out.println("   Manual Login Instructions:");
@@ -183,6 +183,11 @@ public final class TwitterWebScrapper implements WebScrapper {
     
 
     //METHOD
+    /**
+     * phương thức kiểm tra xem đã kéo tới cuối trang chưa
+     * ngoài ra cũng check xem liệu có bị X block không
+     * @return true nếu đã tới cuối trang, false nếu chưa
+     */
     @Override
     public boolean isEndOfPage() throws InterruptedException {
         Random random = new Random();
@@ -216,6 +221,7 @@ public final class TwitterWebScrapper implements WebScrapper {
 
         //nếu bị block thật
         while (!currentDriver.findElements(By.xpath("//span[text()='Thử lại']")).isEmpty()) {
+            //cố tình làm cho thời gian chờ lâu hơn để tránh bị block tiếp
             Thread.sleep(random.nextInt(2) * 100000 + random.nextInt(9) * 10000 + random.nextInt(9) * 1000 + random.nextInt(9) * 100 + 100000);
             currentDriver.findElement(By.xpath("//span[text()='Thử lại']")).click();
             Thread.sleep(5000);
